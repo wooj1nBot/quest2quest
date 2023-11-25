@@ -130,10 +130,10 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              TextButton.icon(
-                  onPressed: (){
-                    updateTabSelection(0, "ㅇㅇㅇㅇ");
-                  },
+              Expanded(child: TextButton.icon(
+                onPressed: (){
+                  updateTabSelection(0, "ㅇㅇㅇㅇ");
+                },
                 icon: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -141,20 +141,20 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                     Icon(
                       Icons.home_rounded,
                       color: selectedIndex == 0
-                      ? Colors.black87
-                        : Colors.grey.shade400,
+                          ? Colors.black87
+                          : Colors.grey.shade400,
                       size: 25,
                     ),
                     Text(
                       '홈',
                       style: TextStyle(
-                        color: selectedIndex == 0
-                            ? Colors.black87
-                            : Colors.grey.shade400,
-                        fontSize: 12,
-                        fontFamily: 'Pretendard',
-                        fontWeight: selectedIndex == 0
-                          ? FontWeight.w600 : FontWeight.w600
+                          color: selectedIndex == 0
+                              ? Colors.black87
+                              : Colors.grey.shade400,
+                          fontSize: 12,
+                          fontFamily: 'Pretendard',
+                          fontWeight: selectedIndex == 0
+                              ? FontWeight.w600 : FontWeight.w600
                       ),
                     ),
                   ],
@@ -165,8 +165,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                     color: Colors.red,
                   ),
                 ),
-              ),
-              TextButton.icon(
+              )),
+              Expanded(child: TextButton.icon(
                 onPressed: (){
                   updateTabSelection(1, "ㅇㅇㅇㅇ");
                 },
@@ -182,7 +182,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                       size: 25,
                     ),
                     Text(
-                      '퀘스트',
+                      '루틴',
                       style: TextStyle(
                           color: selectedIndex == 1
                               ? Colors.black87
@@ -201,12 +201,12 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                     color: Colors.red,
                   ),
                 ),
-              ),
+              )),
               //to leave space in between the bottom app bar items and below the FAB
-              SizedBox(
+              Expanded(child: SizedBox(
                 width: 50.0,
-              ),
-              TextButton.icon(
+              )),
+              Expanded(child: TextButton.icon(
                 onPressed: (){
                   updateTabSelection(2, "ㅇㅇㅇㅇ");
                 },
@@ -215,14 +215,14 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.event_note_outlined,
+                      Icons.group_rounded,
                       color: selectedIndex == 2
                           ? Colors.black87
                           : Colors.grey.shade400,
                       size: 25,
                     ),
                     Text(
-                      '루틴',
+                      '그룹',
                       style: TextStyle(
                           color: selectedIndex == 2
                               ? Colors.black87
@@ -241,8 +241,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                     color: Colors.red,
                   ),
                 ),
-              ),
-              TextButton.icon(
+              )),
+              Expanded(child: TextButton.icon(
                 onPressed: (){
                   updateTabSelection(3, "ㅇㅇㅇㅇ");
                 },
@@ -277,7 +277,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
                     color: Colors.red,
                   ),
                 ),
-              ),
+              ))
+              ,
             ],
           ),
         ),
