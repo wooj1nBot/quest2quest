@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:quest2quest/page/home_page.dart';
-import 'package:quest2quest/page/quest_page.dart';
-import 'package:quest2quest/page/routine_page.dart';
-import 'package:quest2quest/page/achieve_page.dart';
-import 'package:quest2quest/page/menu_page.dart';
+import 'package:quest2quest/Page/HomePage/Screen/MakeQuestScreen.dart';
+
+import 'Page/HomePage/UI/home_page.dart';
+import 'Page/menu_page.dart';
+import 'Page/quest_page.dart';
+import 'Page/routine_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,6 +58,8 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
+
+
 class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin{
 
   bool clickedCentreFAB = false; //boolean used to handle container animation which expands from the FAB
@@ -80,6 +83,8 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     });
   }
 
+
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -89,6 +94,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: TabBarView(
         physics: const NeverScrollableScrollPhysics(),
@@ -114,14 +120,19 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
           shape: BoxShape.circle,
         ),
         child: FloatingActionButton(
-            onPressed: () {},
+            heroTag: "1232d",
+            onPressed: () {
+              Navigator.of(context).push(PageRouteBuilder(
+                  opaque: false,
+                  pageBuilder: (BuildContext context, _, __) =>
+                      MakeQuestScreen()));
+            },
             backgroundColor: Colors.transparent,
             elevation: 0,
             child: const Icon(Icons.add)),
-      ),
+          ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        //color of the BottomAppBar
         color: Colors.white,
         child: Container(
           height: 60,
